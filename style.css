@@ -1,0 +1,78 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    overflow: hidden;
+}
+
+body {
+    background-color: #34495e;
+}
+
+.container {
+    background: linear-gradient(to bottom, #60efc6, #6a6868);
+    margin: auto;
+    margin-top: 10%;
+    height: 65vh;
+    width: 30%;
+    padding: 25px 30px;
+    border-radius: 15px;
+}
+
+.container .search-bar input {
+    padding: 10px 20px;
+    width: 75%;
+    border-radius: 20px;
+    outline: none;
+    font-size: 1rem;
+    border: none;
+    text-transform: capitalize;
+}
+
+.container .search-bar button {
+    padding: 10px 18px;
+    border-radius: 100px;
+    border: none;
+    outline: none;
+    cursor: pointer;
+
+}
+
+.weather-image {
+    margin-top: 25px;
+    text-align: center;
+}
+
+.result-weather div .temp {
+    font-size: 3.5rem;
+    color: white;
+    text-align: center;
+}
+
+.result-weather div .city {
+    font-size: 2.5rem;
+    color: white;
+    font-weight: bold;
+    text-align: center;
+    text-transform: capitalize;
+}
+
+.with-weather-icon {
+    margin-top: 50px;
+    font-size: 1.2rem;
+    color: #fff;
+    display: flex;
+    justify-content: space-between;
+}
+
+.icon-heading {
+    display: flex;
+    justify-content: space-between;
+    color: white;
+    text-transform: capitalize;
+    font-size: 1.2rem;
+
+}

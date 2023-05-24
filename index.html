@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width initial-scale=1.0">
+    <title>Mausam ka haal</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="media.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="search-bar">
+            <input type="text" value="dehli" id="city" placeholder="enter your city...">
+            <button onclick="getweather()"> <i class="fa-solid fa-magnifying-glass"></i></button>
+        </div>
+        <div class="weather-image">
+            <img src="weatherimage.webp" alt="this is weather image" height="120px">
+        </div>
+
+        <div class="result-weather">
+            <div>
+                <p class="temp" id="temp-result"></p>
+            </div>
+            <div>
+                <p class="city" id="city-name"></p>
+            </div>
+            <div class="with-weather-icon">
+                <span><i class="fa-solid fa-water"></i><span id="humidity-result" class="humidity"></span></span>
+                <span><i class="fa-solid fa-wind"></i><span id="windspeed-result" class="wind-speed"></span></span>
+            </div>
+            <div class="icon-heading">
+                <span>humidity</span>
+                <span>wind speed</span>
+            </div>
+
+        </div>
+    </div>
+
+
+
+    <script src="https://kit.fontawesome.com/f76435d516.js" crossorigin="anonymous"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>

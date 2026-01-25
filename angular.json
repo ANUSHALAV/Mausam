@@ -22,7 +22,11 @@
               }
             ],
             "styles": [
+              "bootstrap/dist/css/bootstrap.min.css",
               "src/styles.css"
+            ],
+            "scripts": [
+              "bootstrap/dist/js/bootstrap.js"
             ],
             "server": "src/main.server.ts",
             "outputMode": "server",
@@ -80,6 +84,7 @@
               }
             ],
             "styles": [
+              "bootstrap/dist/css/bootstrap.min.css",
               "src/styles.css"
             ]
           }

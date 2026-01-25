@@ -1,1 +1,10 @@
 /* You can add global styles to this file, and also import other style files */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    font-family: popopins;
+    background:linear-gradient(180deg, #D6EFFF 0%, #B7DFFF 100%);
+}

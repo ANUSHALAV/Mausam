@@ -1,10 +1,36 @@
 /* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css2?family=Oxygen:wght@400;700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&family=Rosario:ital,wght@0,600;0,700;1,300&display=swap');
+
+
 *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 body{
-    font-family: popopins;
+    font-family: "Poppins";
     background:linear-gradient(180deg, #D6EFFF 0%, #B7DFFF 100%);
+    text-transform: capitalize;
+    font-weight:400;
+}
+.main-data{
+    font-weight: 600;
+}
+
+.temp{
+    font-size: 3rem;
+    font-weight: 700;
+}
+
+.icon{
+    background-color: #B7DFFF;
+    border-radius:20%;
+}
+
+.sub-info p{
+    font-size:0.8rem;
+}
+
+.text-justify{
+    text-align: justify;
 }

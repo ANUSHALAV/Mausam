@@ -1,13 +1,14 @@
 <div class="container-fluid vh-100 vw-100">
     <div class="row justify-content-center align-items-center vh-100 vw-100">
-        <div class="col-md-4 card text-center rounded-4">
-            <div class="col-md-12">
-                <input type="text" placeholder="enter the city name" class="form-control">
-                <button class="btn btn-primary">Go</button>
+        <div class="col-md-4 card text-center rounded-5 px-5 py-4 shadow-lg">
+            <div class="col-md-12 d-flex justify-content-center align-items-center gap-2 mb-3">
+                <input type="text" placeholder="Search for a city...."
+                    class="form-control py-1 px-4 rounded-5 shadow-sm">
+                <button class="btn btn-primary rounded-5">Go</button>
             </div>
 
-            <div class="col-md-12">
-                <p>city name , country name , 23 January</p>
+            <div class="col-md-12 ">
+                <p><span class="main-data">city, country,</span> 23 january</p>
             </div>
 
             <div class="col-md-12">
@@ -15,22 +16,43 @@
             </div>
 
             <div class="col-md-12">
-                <p>25°C</p>
+                <p class="temp mb-0">25°C</p>
                 <p>weather description</p>
             </div>
 
-            <div class="col-md-12 d-flex justify-content-between">
-                <div>
-                    <p>Humidity</p>
-                    <p>60%</p>
+            <div class="col-md-12 d-flex justify-content-center align-items-center gap-2 sub-info">
+                <div class="col-md-4 d-flex justify-content-center align-items-center gap-2 py-2 px-2 shadow-lg rounded-4">
+                    <div class="icon d-flex justify-content-center align-items-center p-1">
+                        <span class="material-symbols-outlined">
+                            water_drop
+                        </span>
+                    </div>
+                    <div class="text-justify">
+                        <p class="mb-0">Humidity</p>
+                        <p class="main-data mb-0">60%</p>
+                    </div>
                 </div>
-                <div>
-                    <p>Wind</p>
-                    <p>10 km/h</p>
+                <div class="col-md-4 d-flex justify-content-center align-items-center gap-2 px-2 py-2 shadow-lg rounded-4">
+                    <div class="icon d-flex justify-content-center align-items-center p-1">
+                        <span class="material-symbols-outlined">
+                            air
+                        </span>
+                    </div>
+                    <div class="text-justify">
+                        <p class="mb-0">Wind</p>
+                        <p class="main-data mb-0">10 km/h</p>
+                    </div>
                 </div>
-                <div>
-                    <p>Wind</p>
-                    <p>10 km/h</p>
+                <div class="col-md-4 d-flex justify-content-center align-items-center gap-2 px-2 py-2 shadow-lg rounded-4">
+                    <div class="icon d-flex justify-content-center align-items-center p-1">
+                        <span class="material-symbols-outlined">
+                            air
+                        </span>
+                    </div>
+                    <div class="text-justify">
+                        <p class="mb-0">Wind</p>
+                        <p class="main-data mb-0">10 km/h</p>
+                    </div>
                 </div>
             </div>
 

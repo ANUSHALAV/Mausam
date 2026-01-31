@@ -1,14 +1,14 @@
 <div class="container-fluid vh-100 vw-100">
     <div class="row justify-content-center align-items-center vh-100 vw-100">
-        <div class="col-md-4 card text-center rounded-5 px-5 py-4 shadow-lg">
+        <div class="col-sm-11 col-md-5 col-lg-4 card text-center rounded-5 px-4 py-4 shadow-lg">
             <div class="col-md-12 d-flex justify-content-center align-items-center gap-2 mb-3">
                 <input type="text" placeholder="Search for a city...."
-                    class="form-control py-1 px-4 rounded-5 shadow-sm">
-                <button class="btn btn-primary rounded-5">Go</button>
+                    class="form-control py-1 px-4 rounded-5 shadow-sm" [(ngModel)]="cityName"/>
+                <button class="btn btn-primary rounded-5" (click)="getWeather(cityName)">Go</button>
             </div>
 
             <div class="col-md-12 ">
-                <p><span class="main-data">city, country,</span> 23 january</p>
+                <p><span class="main-data">{{weatherInfo.City||'-'}} , {{weatherInfo.Country||'-'}},</span> 23 january</p>
             </div>
 
             <div class="col-md-12">
@@ -16,8 +16,8 @@
             </div>
 
             <div class="col-md-12">
-                <p class="temp mb-0">25°C</p>
-                <p>weather description</p>
+                <p class="temp mb-0">{{weatherInfo.Temp||'-'}}</p>
+                <p>{{weatherInfo.Description||'-'}}</p>
             </div>
 
             <div class="col-md-12 d-flex justify-content-center align-items-center gap-2 sub-info">
@@ -29,7 +29,7 @@
                     </div>
                     <div class="text-justify">
                         <p class="mb-0">Humidity</p>
-                        <p class="main-data mb-0">60%</p>
+                        <p class="main-data mb-0">{{weatherInfo.Humidity||'-'}}</p>
                     </div>
                 </div>
                 <div class="col-md-4 d-flex justify-content-center align-items-center gap-2 px-2 py-2 shadow-lg rounded-4">
@@ -40,7 +40,7 @@
                     </div>
                     <div class="text-justify">
                         <p class="mb-0">Wind</p>
-                        <p class="main-data mb-0">10 km/h</p>
+                        <p class="main-data mb-0">{{weatherInfo.Wind||'-'}}</p>
                     </div>
                 </div>
                 <div class="col-md-4 d-flex justify-content-center align-items-center gap-2 px-2 py-2 shadow-lg rounded-4">
@@ -50,8 +50,8 @@
                         </span>
                     </div>
                     <div class="text-justify">
-                        <p class="mb-0">Wind</p>
-                        <p class="main-data mb-0">10 km/h</p>
+                        <p class="mb-0">Pressure</p>
+                        <p class="main-data mb-0">{{weatherInfo.Pressure||'-'}}</p>
                     </div>
                 </div>
             </div>

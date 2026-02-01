@@ -13,10 +13,12 @@ export class WeatherInfo implements OnInit {
 
   weatherInfo: any = {};
   cityName: string = 'Delhi';
+  todayDate: any;
 
   constructor(private weatherService: WeatherService) { }
 
   ngOnInit(): void {
+    this.todayDate = new Date().toDateString();;
     this.getWeather(this.cityName);
   }
 
@@ -24,15 +26,21 @@ export class WeatherInfo implements OnInit {
     cityName = cityName.trim();
     if (cityName != null && cityName != '' && cityName != undefined) {
       this.weatherService.GetWeatherData(cityName).subscribe((data: any) => {
-        this.weatherInfo = {
-          City: data.name,
-          Country: data.sys.country,
-          Temp: data.main.temp + '°C',
-          Description: data.weather[0].description,
-          Humidity: data.main.humidity + '%',
-          Wind: data.wind.speed + ' m/s',
-          Pressure: data.main.pressure + ' hPa'
-        };
+        if (data == null || data == undefined || data == '') {
+          alert('Please enter a valid city name');
+          return;
+        } else {
+          this.weatherInfo = {
+            City: data.location.city,
+            Country: data.location.country,
+            Temp: ((5 / 9) * (data.current_observation.condition.temperature - 32)) + ' °C',
+            Description: data.current_observation.condition.text,
+            Humidity: data.current_observation.atmosphere.humidity + '%',
+            Wind: data.current_observation.wind.speed + 'Km/h',
+            Visibility: data.current_observation.atmosphere.visibility + ' %',
+            Pressure: data.current_observation.atmosphere.pressure + ' hPa'
+          };
+        }
       });
     } else {
       alert('Please enter a valid city name');

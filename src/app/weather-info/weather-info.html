@@ -8,16 +8,16 @@
             </div>
 
             <div class="col-md-12 ">
-                <p><span class="main-data">{{weatherInfo.City||'-'}} , {{weatherInfo.Country||'-'}},</span>{{todayDate}}</p>
+                <p><span class="main-data">{{weatherInfo?.location?.city||'-'}} , {{weatherInfo?.location?.country||'-'}},</span>{{todayDate}}</p>
             </div>
 
             <div class="col-md-12">
-                <img src="" alt="weather image here">
+                <img [src]="weatherInfo.weatherImage" alt="weather image here">
             </div>
 
             <div class="col-md-12">
-                <p class="temp mb-0">{{weatherInfo.Temp||'-'}}</p>
-                <p>{{weatherInfo.Description||'-'}}</p>
+                <p class="temp mb-0">{{((5 / 9) * (weatherInfo?.current_observation?.condition?.temperature - 32))||'-'}} °C</p>
+                <p>{{weatherInfo?.current_observation?.condition?.text||'-'}}</p>
             </div>
 
             <div class="col-md-12 d-flex justify-content-center align-items-center gap-2 sub-info">
@@ -29,7 +29,7 @@
                     </div>
                     <div class="text-justify">
                         <p class="mb-0">Humidity</p>
-                        <p class="main-data mb-0">{{weatherInfo.Humidity||'-'}}</p>
+                        <p class="main-data mb-0">{{weatherInfo?.current_observation?.atmosphere?.humidity||'-'}} %</p>
                     </div>
                 </div>
                 <div class="col-md-4 d-flex justify-content-center align-items-center gap-2 px-2 py-2 shadow-lg rounded-4">
@@ -40,7 +40,7 @@
                     </div>
                     <div class="text-justify">
                         <p class="mb-0">Wind</p>
-                        <p class="main-data mb-0">{{weatherInfo.Wind||'-'}}</p>
+                        <p class="main-data mb-0">{{weatherInfo?.current_observation?.wind?.speed||'-'}} Km/h</p>
                     </div>
                 </div>
                 <div class="col-md-4 d-flex justify-content-center align-items-center gap-2 px-2 py-2 shadow-lg rounded-4">
@@ -51,7 +51,7 @@
                     </div>
                     <div class="text-justify">
                         <p class="mb-0">Pressure</p>
-                        <p class="main-data mb-0">{{weatherInfo.Pressure||'-'}}</p>
+                        <p class="main-data mb-0">{{weatherInfo?.current_observation?.atmosphere?.pressure||'-'}} hPa</p>
                     </div>
                 </div>
             </div>

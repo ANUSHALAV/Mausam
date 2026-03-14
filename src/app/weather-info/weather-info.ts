@@ -30,16 +30,19 @@ export class WeatherInfo implements OnInit {
           alert('Please enter a valid city name');
           return;
         } else {
-          this.weatherInfo = {
-            City: data.location.city,
-            Country: data.location.country,
-            Temp: ((5 / 9) * (data.current_observation.condition.temperature - 32)) + ' °C',
-            Description: data.current_observation.condition.text,
-            Humidity: data.current_observation.atmosphere.humidity + '%',
-            Wind: data.current_observation.wind.speed + 'Km/h',
-            Visibility: data.current_observation.atmosphere.visibility + ' %',
-            Pressure: data.current_observation.atmosphere.pressure + ' hPa'
-          };
+          this.weatherInfo = data;
+          if (data?.current_observation?.condition?.text == 'Sunny') {
+            this.weatherInfo.weatherImage = '../../assets/weather/sunny.png';
+          }
+          else if (data?.current_observation?.condition?.text == 'Cloudy') {
+            this.weatherInfo.weatherImage = '../../assets/weather/cloudy.png';
+          }
+          else if (data?.current_observation?.condition?.text == 'Rainy') {
+            this.weatherInfo.weatherImage = '../../assets/weather/rainy.png';
+          }
+          else if (data?.current_observation?.condition?.text == 'Snow') {
+            this.weatherInfo.weatherImage = '../../assets/weather/snow.png';
+          }
         }
       });
     } else {

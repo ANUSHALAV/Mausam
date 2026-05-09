@@ -1,10 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { WeatherService } from '../weather-service';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-weather-info',
-  imports: [FormsModule],
+  imports: [FormsModule,CommonModule],
   templateUrl: './weather-info.html',
   styleUrl: './weather-info.css',
   standalone: true
@@ -31,17 +32,17 @@ export class WeatherInfo implements OnInit {
           return;
         } else {
           this.weatherInfo = data;
-          if (data?.current_observation?.condition?.text == 'Sunny') {
-            this.weatherInfo.weatherImage = '../../assets/weather/sunny.png';
+          if (data?.current_observation?.condition?.text == 'Mostly Sunny') {
+            this.weatherInfo.weatherImage = '../../assets/weather/Sunny.png';
           }
           else if (data?.current_observation?.condition?.text == 'Cloudy') {
-            this.weatherInfo.weatherImage = '../../assets/weather/cloudy.png';
+            this.weatherInfo.weatherImage = '../../assets/weather/Cloudy.png';
           }
           else if (data?.current_observation?.condition?.text == 'Rainy') {
-            this.weatherInfo.weatherImage = '../../assets/weather/rainy.png';
+            this.weatherInfo.weatherImage = '../../assets/weather/Rainy.png';
           }
           else if (data?.current_observation?.condition?.text == 'Snow') {
-            this.weatherInfo.weatherImage = '../../assets/weather/snow.png';
+            this.weatherInfo.weatherImage = '../../assets/weather/Snow.png';
           }
         }
       });

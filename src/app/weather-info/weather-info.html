@@ -11,12 +11,12 @@
                 <p><span class="main-data">{{weatherInfo?.location?.city||'-'}} , {{weatherInfo?.location?.country||'-'}},</span>{{todayDate}}</p>
             </div>
 
-            <div class="col-md-12">
-                <img [src]="weatherInfo.weatherImage" alt="weather image here">
+            <div class="col-md-12 image">
+                <img [src]="weatherInfo.weatherImage" alt="weather image here" class="img-fluid">
             </div>
 
             <div class="col-md-12">
-                <p class="temp mb-0">{{((5 / 9) * (weatherInfo?.current_observation?.condition?.temperature - 32))||'-'}} °C</p>
+                <p class="temp mb-0">{{(((5 / 9) * (weatherInfo?.current_observation?.condition?.temperature - 32))||'-')| number:'1.2-2'}} °C</p>
                 <p>{{weatherInfo?.current_observation?.condition?.text||'-'}}</p>
             </div>
 

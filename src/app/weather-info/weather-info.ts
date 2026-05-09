@@ -32,7 +32,7 @@ export class WeatherInfo implements OnInit {
           return;
         } else {
           this.weatherInfo = data;
-          if (data?.current_observation?.condition?.text == 'Mostly Sunny') {
+          if (data?.current_observation?.condition?.text == 'Mostly Sunny'||data?.current_observation?.condition?.text == 'Sunny') {
             this.weatherInfo.weatherImage = '../../assets/weather/Sunny.png';
           }
           else if (data?.current_observation?.condition?.text == 'Cloudy') {
